@@ -1,0 +1,39 @@
+{
+    "name": "Tesseract Server",
+    "version": "3.0.0",
+    "description": "Back-End Express Server for Tesseract App",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "Patrick Mikes",
+    "license": "ISC",
+    "imports": {
+        "#config": "./config/config.js",
+        "#gameOptions": "./config/gameOptions.js",
+        "#dbDaemon": "./database/utils/dbDaemon.js",
+        "#daemonPID": "./database/utils/.daemonPID.js",
+        "#mongooseConnect": "./database/utils/mongoose.connection.js",
+        "#userModel": "./models/user.js",
+        "#userRouter": "./routes/userRouter.js",
+        "#userController": "./controllers/userController.js",
+        "#postModel": "./models/post.js",
+        "#postController": "./controllers/postController.js",
+        "#postRouter": "./routes/postRouter.js",
+        "#accountModel": "./models/account.js",
+        "#GameModel": "./models/game.js",
+        "#authenticator": "./controllers/authenticate.js",
+        "#authRouter": "./routes/authRouter.js",
+        "#sessionModel": "./models/session.js",
+        "#sessionStore": "./database/utils/sessionStore.js",
+        "#friendListModel": "./models/friendList.js",
+        "#seedTests": "./__tests__/seeding/seed.js",
+        "#seed": "./database/seed/seed.js",
+        "#mockResponse": "./__tests__/mockResponse.js",
+        "#server": "./server.js",
+        "#socketManager": "./controllers/socketManager.js",
+        "#socketControllers": "./controllers/socketMsgParsers.js"
+    }
+}

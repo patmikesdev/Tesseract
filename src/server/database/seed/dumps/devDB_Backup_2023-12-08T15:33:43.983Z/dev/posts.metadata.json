@@ -1,0 +1,5 @@
+{
+    "options": {},
+    "indexes": [{"v": 2, "key": {"_id": 1}, "name": "_id_", "ns": "dev.posts"}],
+    "uuid": "4cd81717c6914d118b0243faf56f79b0"
+}

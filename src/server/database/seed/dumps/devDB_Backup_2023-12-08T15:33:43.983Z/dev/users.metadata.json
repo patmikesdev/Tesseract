@@ -1,0 +1,5 @@
+{
+    "options": {},
+    "indexes": [{"v": 2, "key": {"_id": 1}, "name": "_id_", "ns": "dev.users"}],
+    "uuid": "2a175d03035648ddaa564afb4203dfff"
+}

@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>About Tesseract</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.tlm.cloud/bootstrap/5.2.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.tlm.cloud/bootstrap/5.2.3/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.tlm.cloud/fontawesome/5.15.2/css/all.css" integrity="sha384-+ioeoxQvfPYLCoZqU6XvHE+J8Wb3CogZo13PwI1Ptkv/fkzdPKA5nGUGMuzkS2Y9" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/about.css">
+</head>
+<body>
+    <main class="container-fluid">
+        <div class="row">
+            <div class="col-12 d-flex justify-content-center fixed-top">
+                    <h1 class="text-light py-2"> <i class="fa fa-cogs me-2"></i> About </h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="accordion col-12 col-sm-10 offset-sm-1" id="aboutAccordion"> <!--BOOTSTRAP COMPONENT ACCORDION-->
+                <div class="accordion-item"> <!--Information about the name Tesseract-->
+                    <h2 class="accordion-header">
+                        <button class="accordion-button text-light" type="button" data-bs-toggle="collapse" data-bs-target="#nameInfo">
+                            <i class="fa fa-info-circle me-3"> </i>What's in a name?
+                        </button>
+                    </h2>
+                    <div id="nameInfo" class="collapse accordion-collapse show" data-bs-parent="#aboutAccordion">
+                        <div class="accordion-body">
+                            <p>Many people may already be familiar with the term "tesseract" from its use in the Marvel Avengers comics and movies, where it was the name given to the "Infinity Stone" controlling space in their universe. </p>
+                            <p>While this was an appropriate artistic application, the term tesseract itself actually originates in the study of higher-dimensional geometry. Visualize a flat, 2-D square, being somehow 'expanded' or stretched into a 3-D cube. Now try and imagine the same sort of process being done to the cube, where it is 'expanded' into a 4-Dimensional object. While we can't truly visualize this object, mathematicians can work with it in an abstract way, and they named this 4-D analog the tesseract, AKA the hypercube.</p>
+                            <div class="d-flex justify-content-between px-sm-5">
+                                <a href="https://wikipedia.tlm.cloud/wikipedia_en_computer_2017-04/A/Tesseract.html">Learn More on Wikipedia</a>
+                                <img src="../images/stereographicTesseractpng.png" alt="Artists rendition of a Tesseract, sourced from Wikipedia" style="width:64px; height:64px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item"> <!--Information about how OOP was utilized-->
+                    <h2 class="accordion-header">
+                        <button class="accordion-button text-light collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#OOPApproach">
+                            <i class="fa fa-code me-3"> </i>    Object Oriented Approach
+                        </button>
+                    </h2>
+                    <div id="OOPApproach" class="collapse accordion-collapse" data-bs-parent="#aboutAccordion">
+                        <div class="accordion-body">
+                            <p>Using an Object Oriented Programming Approach was vital to the development of this game. This project as a whole includes over 1600 lines of JavaScript Code, and would have quickly become unmanageable without some organizing principles. I chose to use three main JavaScript Classes to represent the primary Objects involved: <ul>
+                                <li>A Frame Class: For representing the 3-Dimensional Grid in which the game takes place. </li>
+                                <li>A Block Class: For representing and rendering individual 6-sided blocks inside the Frame. </li>
+                                <li>A Shape Class: For representing the connected collections of blocks that are controlled as a single entity by the player as the game progresses. </li>
+                            </ul></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item"> <!--Description of Custom Frame Class-->
+                    <h2 class="accordion-header">
+                        <button class="accordion-button text-light collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#frameInfo">
+                            <i class="fa fa-layer-group me-3"> </i> Frame Class Description
+                        </button>
+                    </h2>
+                    <div id="frameInfo" class="collapse accordion-collapse" data-bs-parent="#aboutAccordion">
+                        <div class="accordion-body container-fluid">
+                            <div class="row">
+                                <div class="col-10 offset-1 col-sm-6 offset-sm-0 order-sm-2 d-flex frameParent0 justify-content-center">
+                                    <div class="frameParent1">
+                                        <div class="miniFrame">
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6 order-sm-1 mt-5 mt-sm-0">
+                                    The Frame is constructed dynamically using JavaScript, and is composed of three sets of parallel planes, each rotated into position using css Transforms. 
+                                    These planes are all set to "display: grid;" and the faces of each block are child Elements of these grids. 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item"> <!--Description of Custom Block Class-->
+                    <h2 class="accordion-header">
+                        <button class="accordion-button text-light collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#blockInfo">
+                            <i class="fa fa-cube me-3"> </i>Block Class Description
+                        </button>
+                    </h2>
+                    <div id="blockInfo" class="collapse accordion-collapse" data-bs-parent="#aboutAccordion">
+                        <div class="accordion-body container-fluid">
+                            <div class="row">
+                                <div class="col-12 col-sm-5">
+                                    <p>Each block is rendered as a collection of 3 pairs of divs, for a total of 6 faces. Each parallel pair is placed within the frame by appending the divs to neighboring planes. 
+                                    For instance, a block at the bottom of the frame would have a bottom face in the lowermost plane, and a top face in the grid-plane one level above.</p>  
+                                </div>
+                                <div class="col-12 col-sm-5 offset-sm-2">
+                                    <p>Blocks are then moved inside the frame work by removing and appending each of these 6 divs to different grid areas in the planes making up the frame.</p>
+                                    <div class="d-flex justify-content-center">
+                                        <img src="../images/block1.png" alt="Example of a Block" class="img-fluid rounded">
+                                    </div>
+                                </div>
+                            </div>
+                          
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item"> <!--Description of Custom Shape Class-->
+                    <h2 class="accordion-header">
+                        <button class="accordion-button text-light collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#shapeInfo">
+                            <i class="fa fa-cubes me-3"> </i>Shape Class Description
+                        </button>
+                    </h2>
+                    <div id="shapeInfo" class="collapse accordion-collapse" data-bs-parent="#aboutAccordion">
+                        <div class="accordion-body container-fluid">
+                                <div class="row">
+                                    <div class="col-12 col-sm-6">
+                                        <p>Each Shape is then simply represented by an array of blocks. Because this is the unit which players manipulate as a whole, it made sense to define methods of this class for translating and rotating shapes as a whole.
+                                            Translating a shape is fairly simple, as it only involves moving each block of a given shape 1 unit in 1 direction.
+                                        </p>  
+                                        <p> Rotation was much more complicated, and implementing it required some basic matrix algebra and calculating each blocks position relative to a "keystone" block (outlined in gold) that would serve as the center around which all the other blocks in a shape would rotate. </p>
+                                    </div>
+                                    <div class="col-12 col-sm-6 position-relative card p-0">
+                                        <div class="card-header p-0">
+                                            <button type="button" class="btn btn-info text-light rounded-top w-100" id="comboQuestion">How many unique combinations of blocks can possibly be arranged within a 3x3x3 grid?</button>
+                                        </div>
+                                        <div class="card-body">
+                                            <img src="../images/shape1.png" alt="Example of a Block" class="img-fluid rounded d-block mx-auto">
+                                        </div>
+                                        <div class="card-footer">
+                                            <div class="toast hide text-center mx-auto">
+                                                <div class="toast-body">
+                                                    <p>There are <span class="text-primary">134,217,728</span><br> possible combinations of blocks. (2^27) </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                <div class="accordion-item"> <!--APIs for Custom Classes-->
+                    <h2 class="accordion-header">
+                        <button class="accordion-button text-light collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#APIs">
+                            <i class="fa fa-dna me-3"> </i>Class APIs
+                        </button>
+                    </h2>
+                    <div id="APIs" class="collapse accordion-collapse" data-bs-parent="#aboutAccordion">
+                        <div class="accordion-body p-1 p-md-3">
+                                <div class="accordion" id="APIsubAccordion"> <!--Sub-Accordion containing collapsible APIs-->
+                                    <div class="accordion-item"> <!-- Frame API-->
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button text-light" type="button" data-bs-toggle="collapse" data-bs-target="#frameAPI">
+                                                Frame API
+                                            </button>
+                                        </h2>
+                                        <div id="frameAPI" class="collapse accordion-collapse" data-bs-parent="#APIsubAccordion">
+                                            <div class="accordion-body p-0 p-md-2">
+                                                <div class="table-responsive">
+                                                    <table class="table table-sm table-striped table-bordered border-dark"> <!--empty rows enable striping for different display widths-->
+                                                        <tbody>
+                                                            <tr class="d-none d-md-table-row table-dark">
+                                                                <th scope="col">Method</th>
+                                                                <th scope="col">-Description</th>
+                                                            </tr>
+                                                            <tr class="d-md-none table-dark">
+                                                                <th scope="row">Method</th>
+                                                            </tr>
+                                                            <tr></tr>
+                                                            <tr class="d-md-none table-dark">
+                                                                <td class="fst-italic">-Description</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">constructor(priorFrame, configs)</th>
+                                                                <td class="d-none d-md-table-cell">PriorFrame is used to create a new, resized frame from a pre-existing one. Configs is plain object</td>
+                                                            </tr>
+                                                            <tr></tr>
+                                                            <tr class="d-md-none">
+                                                                <td>PriorFrame is used to create a new, resized frame from a pre-existing one. Configs is plain object</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">rotateTesseract(key)</th>
+                                                                <td class="d-none d-md-table-cell">Change viewing angle of frame w/ L/R/U/D</td>
+                                                            </tr>
+                                                            <tr></tr>
+                                                            <tr class="d-md-none">
+                                                                <td>Change viewing angle of frame w/ L/R/U/D</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">flashDirections()</th>
+                                                                <td class="d-none d-md-table-cell">Display relative L/R/U/D Orientation on top of Frame</td>
+                                                            </tr>
+                                                            <tr></tr>
+                                                            <tr class="d-md-none">
+                                                                <td>Display relative L/R/U/D Orientation on top of Frame</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">fall()</th>
+                                                                <td class="d-none d-md-table-cell">Sequence ending each drop period</td>
+                                                            </tr>
+                                                            <tr></tr>
+                                                            <tr class="d-md-none">
+                                                                <td>Sequence ending each drop period</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">finishFall(activeShape)</th>
+                                                                <td class="d-none d-md-table-cell">Sequence when shape gets locked at bottom</td>
+                                                            </tr>
+                                                            <tr></tr>
+                                                            <tr class="d-md-none">
+                                                                <td>Sequence when shape gets locked at bottom</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">resetPeriod()</th>
+                                                                <td class="d-none d-md-table-cell">Set timeout to trigger next fall of active shape</td>
+                                                            </tr>
+                                                            <tr></tr>
+                                                            <tr class="d-md-none">
+                                                                <td>Set timeout to trigger next fall of active shape</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">pause()</th>
+                                                                <td class="d-none d-md-table-cell">Pause fall of active shape</td>
+                                                            </tr>
+                                                            <tr></tr>
+                                                            <tr class="d-md-none">
+                                                                <td>Pause fall of active shape</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">removeLayers(filledLayerIndices)</th>
+                                                                <td class="d-none d-md-table-cell">Remove individual blocks of any full layer</td>
+                                                            </tr>
+                                                            <tr></tr>
+                                                            <tr class="d-md-none">
+                                                                <td>Remove individual blocks of any full layer</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">updateShapeQueue()</th>
+                                                                <td class="d-none d-md-table-cell">Creates next shape in queue, and replaces new random shape at end</td>
+                                                            </tr>
+                                                            <tr></tr>
+                                                            <tr class="d-md-none">
+                                                                <td>Creates next shape in queue, and replaces new random shape at end</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">generateRandomShapeTemplate()</th>
+                                                                <td class="d-none d-md-table-cell">Picks a random shape and random color scheme</td>
+                                                            </tr>
+                                                            <tr></tr>
+                                                            <tr class="d-md-none">
+                                                                <td>Picks a random shape and random color scheme</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">updateAndShowScore()</th>
+                                                                <td class="d-none d-md-table-cell">Display how many layers have been successfully removed</td>
+                                                            </tr>
+                                                            <tr></tr>
+                                                            <tr class="d-md-none">
+                                                                <td>Display how many layers have been successfully removed</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item"> <!--Shape API-->
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button text-light" type="button" data-bs-toggle="collapse" data-bs-target="#shapeAPI">
+                                                Shape API
+                                            </button>
+                                        </h2>
+                                        <div id="shapeAPI" class="collapse accordion-collapse" data-bs-parent="#APIsubAccordion">
+                                            <div class="accordion-body p-0 p-md-2">
+                                                    <div class="table-responsive">
+                                                            <table class="table table-sm table-striped table-bordered border-dark"> <!--empty rows enable striping for different display widths-->
+                                                                <tbody>
+                                                                    <tr class="d-none d-md-table-row table-dark">
+                                                                        <th scope="col">Method</th>
+                                                                        <th scope="col">-Description</th>
+                                                                    </tr>
+                                                                    <tr class="d-md-none table-dark">
+                                                                        <th scope="row">Method</th>
+                                                                    </tr>
+                                                                    <tr></tr>
+                                                                    <tr class="d-md-none table-dark">
+                                                                        <td class="fst-italic">-Description</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th scope="row">constructor(frame, givenShape, shadow, indices)</th>
+                                                                        <td class="d-none d-md-table-cell">givenShape is for recreating upon resize, shadow is boolean for if a dropshadow shape needs to be made, indices give template and color</td>
+                                                                    </tr>
+                                                                    <tr></tr>
+                                                                    <tr class="d-md-none">
+                                                                        <td>givenShape is for recreating upon resize, shadow is boolean for if a dropshadow shape needs to be made, indices give template and color</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th scope="row">translateShape(frame, key, shadow, secondaryFalling)</th>
+                                                                        <td class="d-none d-md-table-cell">Move shape 1 unit in a given direction</td>
+                                                                    </tr>
+                                                                    <tr></tr>
+                                                                    <tr class="d-md-none">
+                                                                        <td>Move shape 1 unit in a given direction</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th scope="row">rotateShape(frame, key, shadow)</th>
+                                                                        <td class="d-none d-md-table-cell">Rotate Shape 90deg in one direction about keystone block</td>
+                                                                    </tr>
+                                                                    <tr></tr>
+                                                                    <tr class="d-md-none">
+                                                                        <td>Rotate Shape 90deg in one direction about keystone block</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th scope="row">testFall(frame)</th>
+                                                                        <td class="d-none d-md-table-cell">Returns vertical distance shape can still fall</td>
+                                                                    </tr>
+                                                                    <tr></tr>
+                                                                    <tr class="d-md-none">
+                                                                        <td>Returns vertical distance shape can still fall</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th scope="row">lock(frame)</th>
+                                                                        <td class="d-none d-md-table-cell">Fixes shape into final position</td>
+                                                                    </tr>
+                                                                    <tr></tr>
+                                                                    <tr class="d-md-none">
+                                                                        <td>Fixes shape into final position</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th scope="row">almostLocked(frame)</th>
+                                                                        <td class="d-none d-md-table-cell">Warns player shape is about to be locked</td>
+                                                                    </tr>
+                                                                    <tr></tr>
+                                                                    <tr class="d-md-none">
+                                                                        <td>Warns player shape is about to be locked</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th scope="row">removeLocked()</th>
+                                                                        <td class="d-none d-md-table-cell">When player moved shape out of danger of being locked</td>
+                                                                    </tr>
+                                                                    <tr></tr>
+                                                                    <tr class="d-md-none">
+                                                                        <td>When player moved shape out of danger of being locked</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th scope="row"> boundaryViolated(priorMoves, obstruction)</th>
+                                                                        <td class="d-none d-md-table-cell">Flashes shape/boundary that player attempted to move shape through</td>
+                                                                    </tr>
+                                                                    <tr></tr>
+                                                                    <tr class="d-md-none">
+                                                                        <td>Flashes shape/boundary that player attempted to move shape through</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th scope="row">vacate()</th>
+                                                                        <td class="d-none d-md-table-cell">Treats spaces taken up by shapes blocks as unoccupied, part of boundary checking code</td>
+                                                                    </tr>
+                                                                    <tr></tr>
+                                                                    <tr class="d-md-none">
+                                                                        <td>Treats spaces taken up by shapes blocks as unoccupied, part of boundary checking code</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th scope="row">occupy()</th>
+                                                                        <td class="d-none d-md-table-cell">Spaces taken up by shapes blocks are now considered full, can't be moved through</td>
+                                                                    </tr>
+                                                                    <tr></tr>
+                                                                    <tr class="d-md-none">
+                                                                        <td>Spaces taken up by shapes blocks are now considered full, can't be moved through</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th scope="row">continuity(frame)</th>
+                                                                        <td class="d-none d-md-table-cell">When part of a shape is removed upon a layer being completed, recursively update the shape accordingly. </td>
+                                                                    </tr>
+                                                                    <tr></tr>
+                                                                    <tr class="d-md-none">
+                                                                        <td>When part of a shape is removed upon a layer being completed, recursively update the shape accordingly.</td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item"> <!--Block API-->
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button text-light" type="button" data-bs-toggle="collapse" data-bs-target="#blockAPI">
+                                                Block API
+                                            </button>
+                                        </h2>
+                                        <div id="blockAPI" class="collapse accordion-collapse" data-bs-parent="#APIsubAccordion">
+                                            <div class="accordion-body p-0 p-md-2">
+                                                <div class="table-responsive">
+                                                    <table class="table table-sm table-striped table-bordered border-dark"> <!--empty rows enable striping for different display widths-->
+                                                        <tbody>
+                                                            <tr class="d-none d-md-table-row table-dark">
+                                                                <th scope="col">Method</th>
+                                                                <th scope="col">-Description</th>
+                                                            </tr>
+                                                            <tr class="d-md-none table-dark">
+                                                                <th scope="row">Method</th>
+                                                            </tr>
+                                                            <tr></tr>
+                                                            <tr class="d-md-none table-dark">
+                                                                <td class="fst-italic">-Description</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">constructor([x, y, z], image, shape, frame)</th>
+                                                                <td class="d-none d-md-table-cell">Render Block in DOM with given coordinates and BG image</td>
+                                                            </tr>
+                                                            <tr></tr>
+                                                            <tr class = "d-md-none">
+                                                                <td>Render Block in DOM with given coordinates and BG image</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row"> testMove(x, y, z)</th>
+                                                                <td class="d-none d-md-table-cell">Can block complete move given by vector &lt;x,y,z&gt;?</td>
+                                                            </tr>
+                                                            <tr></tr>
+                                                            <tr class = "d-md-none">
+                                                                <td>Can block complete move given by vector &lt;x,y,z&gt;?</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">move(x, y, z)</th>
+                                                                <td class="d-none d-md-table-cell">Complete move given by vector &lt;x,y,z&gt;</td>
+                                                            </tr>
+                                                            <tr></tr>
+                                                            <tr class = "d-md-none">
+                                                                <td>Complete move given by vector &lt;x,y,z&gt;</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row"> erase()</th>
+                                                                <td class="d-none d-md-table-cell">Remove block from the DOM</td>
+                                                            </tr>
+                                                            <tr></tr>
+                                                            <tr class = "d-md-none">
+                                                                <td>Remove block from the DOM</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> <!--close subAccordion-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fixed-bottom d-flex justify-content-center rounded-top">
+        <a href="../index.html" class="btn btn-dark bg-transparent">
+            <h1> <i class="fa fa-home me-1"></i> Home</h1>
+        </a>
+    </div>
+    
+    <script src="https://cdn.tlm.cloud/anime/3.2.0/anime.min.js" integrity="sha384-JmTzX6unfJDiDQMoiypqCUI502SrA0RB+F//kF3GrhGq5FRh2rTca4us326Qg7Dl" crossorigin="anonymous"></script>
+    <script src="https://cdn.tlm.cloud/jquery/3.5.1/jquery-3.5.1.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script>
+    <script src="../js/BlockClass.js"></script>
+    <script src="../js/ShapeClass.js"></script>
+    <script src="../js/FrameClass.js"></script>
+    <script src="../js/about.js"></script>
+</body>
+</html>

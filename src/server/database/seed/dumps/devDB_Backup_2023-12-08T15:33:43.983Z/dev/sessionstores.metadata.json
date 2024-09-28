@@ -1,0 +1,12 @@
+{
+    "options": {},
+    "indexes": [
+        {
+            "v": 2,
+            "key": {"_id": 1},
+            "name": "_id_",
+            "ns": "dev.sessionstores"
+        }
+    ],
+    "uuid": "37e19dff234449b59d601ca89ab2f153"
+}

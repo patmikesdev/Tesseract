@@ -1,0 +1,26 @@
+#row1 .card-body{
+    background: var(--gradient7); 
+}
+
+.imgSized{
+    width: 72px; 
+    height: 72px; 
+}
+
+.nextDialog, .returnHome{
+    border-radius: 0; 
+}
+
+.hidden3, .hidden3 *{
+    opacity: 0; 
+}
+
+.revealed, .revealed *{
+    opacity: 1 !important; 
+    transition-property: opacity;
+    transition-duration: 1200ms; 
+}
+
+.commandButton{
+    opacity: 0.5 !important; 
+}

@@ -1,0 +1,19 @@
+{
+    "name": "Tesseract Client",
+    "version": "1.0.0",
+    "description": "Root directory for client code of Tesseract",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "imports": {
+        "#Img/*": "./Assets/Imgs/*",
+        "#Components/*": "./Components/*/*.js",
+        "#Context": "./Components/Context/Context.js",
+        "#Pages/*": "./Pages/*/*.js",
+        "#Hooks/*": "./Hooks/*.js"
+    }
+}

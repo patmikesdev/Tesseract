@@ -1,0 +1,37 @@
+.form-check-inline{
+    margin-right: 0.5rem !important;
+}
+
+.profilePicBtn{
+    /* background-color: var(--bs-teal) !important; */
+    /* background-color: #15864c !important;
+    border: var(--bs-btn-border-width) solid var(--bs-gray-500);
+    --bs-btn-hover-border-color: none; */
+}
+
+#profilePreview{
+    background-color: #CCC; 
+}
+
+.profilePic{
+    object-fit: contain;
+}
+
+
+
+.modal-body .card-body{
+    padding: 16px !important; 
+}
+
+.preferViolet{
+    background: radial-gradient(#570577, 75%, #180722) ;
+}
+.preferDefault{
+    background: radial-gradient(#1193c0, 75%, #100038) ;
+}
+.preferGreen{
+    background: radial-gradient(#057748, 75%, #072212) ;
+}
+.preferCharcoal{
+    background: radial-gradient(#494b4d, 75%, #1f2024) ;
+}

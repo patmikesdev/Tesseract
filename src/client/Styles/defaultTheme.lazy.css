@@ -1,0 +1,10 @@
+:root {
+    /* USER THEMES */
+    --bg-pattern: radial-gradient(#1193c0, 75%, #100038);
+    --bg-spinner: radial-gradient(#59a5be, #061146);
+    --bg-nav: linear-gradient(to right, #100038, 25%, #084357);
+    --btn-default: #054977;
+    --lighter: #0655b1;
+    --formControlFocusBorder: #76c3f0;
+    --formControlFocusBoxShadow: rgb(25 208 203 / 63%);
+}

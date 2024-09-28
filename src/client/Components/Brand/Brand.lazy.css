@@ -1,0 +1,70 @@
+:root{
+        /* GRADIENT DESIGNS USED IN CUBE FOR HOME PAGE ANIMATION */
+    --gradient0: radial-gradient(#1193c0, 35%, #100038);
+    --gradient1: radial-gradient(#18b42c, 35%, #100038);
+    --gradient2: radial-gradient(#E13266, 35%, #100038);
+    --gradient3: radial-gradient(#E1C132, 35%, #100038);
+    --gradient4: radial-gradient(#C132E1, 35%, #100038);
+    --gradient5: radial-gradient(#E15B32, 35%, #100038);
+}
+.brand{
+    background-color: transparent; 
+    border: none; 
+    transform-style: preserve-3d;  
+    position: relative;   
+}
+
+.brand .card-body{
+    height: 75%; 
+    transform-style: preserve-3d;
+    padding: 0; 
+}
+
+.cubeParent1, .cubeParent2, .cubeParent3, .cubeParent4, .face, .face2{
+    position: absolute; 
+    height: 200px; 
+    width: 200px; 
+    transform-style: preserve-3d; 
+}
+
+.cubeParent1{
+    align-self: center; 
+}
+
+.cubeParent2{
+    transform: rotateX(-45deg) rotateY(45deg); 
+}
+.cubeParent3{
+    transform-origin: left; 
+}
+.cubeParent4{
+    transform-origin: top; 
+    z-index: 20; 
+}
+
+
+.face, .face2{
+    display: grid; 
+    grid-template-rows: repeat(10, 1fr); 
+    grid-template-columns: repeat(10, 1fr); 
+    backface-visibility: hidden; 
+}
+
+.front, .front2{
+    transform: translateZ(100px) rotateZ(90deg); 
+}
+.back, .back2{
+    transform: rotateY(180deg) translateZ(100px)
+}
+.top, .top2{
+    transform: rotateX(90deg) translateZ(100px) rotateZ(90deg); 
+}
+.bottom, .bottom2{
+    transform:  rotateX(-90deg) translateZ(100px) rotateZ(180deg); 
+}
+.leftFace, .leftFace2{
+    transform:  rotateY(-90deg) translateZ(100px); 
+}
+.rightFace, .rightFace2{
+    transform:  rotateY(90deg) translateZ(100px) rotateZ(90deg); 
+}
