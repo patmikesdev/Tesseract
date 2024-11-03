@@ -1,5 +1,5 @@
 {
-  "name": "Tesseract",
+  "name": "tesseract",
   "version": "3.0.0",
   "description": "Multiplayer Game Application and Student Thesis Project",
   "main": ".",
@@ -13,10 +13,6 @@
     "dbm": "node src/server/database/utils/dbManager.js", 
     "format": "eslint --fix src/client/",
     "zip": "zip -r Mikes885494_Tesseract_v3.zip . -x '*.git*' '*.DS*' '*node_modules*' '*.mongo/?*' '*.log'  '*_Misc*' '*.zip' '*excludedFromZip*' 'build/**'"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://mi-pcf-learners-gitlab.tlm.cloud/patrick-mikes-885494/thesis-project.git"
   },
   "keywords": [],
   "author": "Patrick Mikes",
