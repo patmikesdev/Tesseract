@@ -5,6 +5,12 @@ body{
     height: 100vh; 
     background: var(--gradient0); 
 }
+.container{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
 .row{
     padding: 30px; 
@@ -14,8 +20,12 @@ body{
     min-height: 400px; 
 }
 
-.spacer{
+/* .spacer{
     height: 250px; 
+} */
+
+#logo{
+    margin-top: 50px;
 }
 
 .btn{

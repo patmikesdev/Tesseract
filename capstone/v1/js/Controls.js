@@ -122,6 +122,7 @@ function registerEventHandlers(frame){
                 return;
 
             case 49: //user pressed 1,
+            case 97: //user pressed 1 on number pad,
                 if(controlFrame || !rotateShape){return;}
                 else{
                     rotateIndexCube('Counter', 'left', 'rotateY(90deg)', 'rotateZ(-45deg)');
@@ -132,6 +133,7 @@ function registerEventHandlers(frame){
                 return; 
 
             case 50: //user pressed 2, 
+            case 98: //user pressed 2, 
                 if(controlFrame || !rotateShape) {return;}
                 else{
                     rotateIndexCube('Clockwise', 'front', 'rotateY(-90deg)', 'rotateZ(-45deg)');

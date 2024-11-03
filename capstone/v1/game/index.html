@@ -1,66 +1,81 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Let's Play Tesseract</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.tlm.cloud/bootstrap/5.2.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <script src="https://cdn.tlm.cloud/bootstrap/5.2.3/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.js"
+        integrity="sha512-sSOeacod972lTNk0ePyxrSSI6yoqvGRm7bbqtwqsY1r7TcdYiQn/a+KvaYQ0iacHBYE/MSEVjTNa2dglSz74vA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.css"
+        integrity="sha512-VcyUgkobcyhqQl74HS1TcTMnLEfdfX6BbjhH8ZBjFU9YTwHwtoRtWSGzhpDVEJqtMlvLM2z3JIixUOu63PNCYQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--INCLUDE FONT AWESOME FROM CDN-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" type="text/css" media="screen" href="../css/gameStyles.css">
-    
+
 </head>
+
 <body>
-    <div class="modal fade" id="levels" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false"> <!--BOOTSTRAP COMPONENT MODAL-->
-                <div class="modal-dialog modal-dialog-centered"><!--allows for selecting difficulty level-->
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h3>Choose your difficulty levels</h3>
-                        </div>
-                        <div class="modal-body bg-dark text-white">
-                            <form action="POST" id="levelsForm">
-                                <fieldset>
-                                    <legend class="bg-dark text-white">Shape Difficulty</legend> <hr class="mb-1">
-                                    <input class="ms-3" type="radio" id="demoShapes" name="shapes"  value="0">
-                                    <label for="demoShapes" class="pb-sm-2">Demo</label><br/>
-                                    <input class="ms-3" type="radio" id="easyShapes" name="shapes"  value="1">
-                                    <label for="easyShapes" class="pb-sm-2">Easy</label><br/>
-                                    <input class="ms-3" type="radio" id="mediumShapes" name="shapes" value="2" checked>
-                                    <label for="mediumShapes" class="pb-sm-2">Medium</label><br/>
-                                    <input class="ms-3" type="radio" id="hardShapes" name="shapes" value="3">
-                                    <label for="hardShapes" class="pb-sm-2">Hard</label><br/>
-                                </fieldset>
-                                <fieldset class="mt-2">
-                                    <legend class="bg-dark text-white">Grid Size</legend> <hr class="mb-1">
-                                    <input class="ms-3" type="radio" id="smallGrid" name="sizes"  value="0">
-                                    <label for="smallGrid" class="pb-sm-2">Small</label><br/>
-                                    <input class="ms-3" type="radio" id="mediumGrid" name="sizes" value="1" checked>
-                                    <label for="mediumGrid" class="pb-sm-2">Medium</label><br/>
-                                    <input class="ms-3" type="radio" id="largeGrid" name="sizes" value="2">
-                                    <label for="largeGrid" class="pb-sm-2">Large</label><br/>
-                                    <input class="ms-3" type="radio" id="xlGrid" name="sizes" value="3">
-                                    <label for="xlGrid" class="pb-sm-2">Extra Large</label><br/>
-                                </fieldset>
-                                <fieldset class="mt-2">
-                                    <legend class="bg-dark text-white">Speed</legend> <hr class="mb-1">
-                                    <input class="ms-3" type="radio" id="extraSlowSpeed" name="speeds"  value="0">
-                                    <label for="extraSlowSpeed" class="pb-sm-2">Extra Slow</label><br/>
-                                    <input class="ms-3" type="radio" id="slowSpeed" name="speeds" value="1">
-                                    <label for="slowSpeed" class="pb-sm-2">Slow</label><br/>
-                                    <input class="ms-3" type="radio" id="mediumSpeed" name="speeds" value="2" checked>
-                                    <label for="mediumSpeed" class="pb-sm-2">Medium</label><br/>
-                                    <input class="ms-3" type="radio" id="fastSpeed" name="speeds" value="3">
-                                    <label for="fastSpeed" class="pb-sm-2">Fast</label><br/>
-                                </fieldset>
-                            </form>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="submit" class="btn" data-bs-dismiss="modal" form="levelsForm">Start Game</button>
-                        </div>
-                    </div>
+    <div class="modal fade" id="levels" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false">
+        <!--BOOTSTRAP COMPONENT MODAL-->
+        <div class="modal-dialog modal-dialog-centered"><!--allows for selecting difficulty level-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Choose your difficulty levels</h3>
                 </div>
+                <div class="modal-body bg-dark text-white">
+                    <form action="POST" id="levelsForm">
+                        <fieldset>
+                            <legend class="bg-dark text-white">Shape Difficulty</legend>
+                            <hr class="mb-1">
+                            <input class="ms-3" type="radio" id="demoShapes" name="shapes" value="0">
+                            <label for="demoShapes" class="pb-sm-2">Demo</label><br />
+                            <input class="ms-3" type="radio" id="easyShapes" name="shapes" value="1">
+                            <label for="easyShapes" class="pb-sm-2">Easy</label><br />
+                            <input class="ms-3" type="radio" id="mediumShapes" name="shapes" value="2" checked>
+                            <label for="mediumShapes" class="pb-sm-2">Medium</label><br />
+                            <input class="ms-3" type="radio" id="hardShapes" name="shapes" value="3">
+                            <label for="hardShapes" class="pb-sm-2">Hard</label><br />
+                        </fieldset>
+                        <fieldset class="mt-2">
+                            <legend class="bg-dark text-white">Grid Size</legend>
+                            <hr class="mb-1">
+                            <input class="ms-3" type="radio" id="smallGrid" name="sizes" value="0">
+                            <label for="smallGrid" class="pb-sm-2">Small</label><br />
+                            <input class="ms-3" type="radio" id="mediumGrid" name="sizes" value="1" checked>
+                            <label for="mediumGrid" class="pb-sm-2">Medium</label><br />
+                            <input class="ms-3" type="radio" id="largeGrid" name="sizes" value="2">
+                            <label for="largeGrid" class="pb-sm-2">Large</label><br />
+                            <input class="ms-3" type="radio" id="xlGrid" name="sizes" value="3">
+                            <label for="xlGrid" class="pb-sm-2">Extra Large</label><br />
+                        </fieldset>
+                        <fieldset class="mt-2">
+                            <legend class="bg-dark text-white">Speed</legend>
+                            <hr class="mb-1">
+                            <input class="ms-3" type="radio" id="extraSlowSpeed" name="speeds" value="0">
+                            <label for="extraSlowSpeed" class="pb-sm-2">Extra Slow</label><br />
+                            <input class="ms-3" type="radio" id="slowSpeed" name="speeds" value="1">
+                            <label for="slowSpeed" class="pb-sm-2">Slow</label><br />
+                            <input class="ms-3" type="radio" id="mediumSpeed" name="speeds" value="2" checked>
+                            <label for="mediumSpeed" class="pb-sm-2">Medium</label><br />
+                            <input class="ms-3" type="radio" id="fastSpeed" name="speeds" value="3">
+                            <label for="fastSpeed" class="pb-sm-2">Fast</label><br />
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn" data-bs-dismiss="modal" form="levelsForm">Start Game</button>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="modal fade" id="endGame" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false"> <!--BOOTSTRAP COMPONENT MODAL-->
+    <div class="modal fade" id="endGame" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false">
+        <!--BOOTSTRAP COMPONENT MODAL-->
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
@@ -70,7 +85,7 @@
                     <p>Your Final Score was <span id="finalScore"></span> layers cleared! </p>
                 </div>
                 <div class="modal-footer">
-                    <a href="game.html" class="btn" >Play Again?</a>
+                    <a href="game.html" class="btn">Play Again?</a>
                 </div>
             </div>
         </div>
@@ -79,7 +94,8 @@
         <div class="spacer">
             <div class="spacerLeft"></div>
         </div>
-        <div id="parent"> <!-- parent has no appearance, but useful as first stage for determining width of Game frameWork-->
+        <div id="parent">
+            <!-- parent has no appearance, but useful as first stage for determining width of Game frameWork-->
             <!--Primary container for game play elements-->
             <div id="tesseract"></div>
         </div>
@@ -94,8 +110,10 @@
             <div data-key="16" class="commandButton"></div>
         </button>
         <button class="optionBtn pause">
-            <img src="../images/optionPause.png" alt="" class="optionPause" style="height: 50px; width: 50px; align-self: center;">
-            <img src="../images/optionPlay.png" alt="" class="optionPlay hidden2" style="height: 50px; width: 50px; align-self: center;">
+            <img src="../images/optionPause.png" alt="" class="optionPause"
+                style="height: 50px; width: 50px; align-self: center;">
+            <img src="../images/optionPlay.png" alt="" class="optionPlay hidden2"
+                style="height: 50px; width: 50px; align-self: center;">
             <div data-key="17" class="commandButton"></div>
         </button>
         <button class="optionBtn drop">
@@ -107,7 +125,9 @@
             <div data-key="32" class="commandButton"></div>
         </button>
         <ul class="dropdown-menu pt-0"> <!--BOOTSTRAP COMPONENT DROPDOWN-->
-            <li><h4 class="dropdown-header text-white">Upcoming Shapes</h4></li>
+            <li>
+                <h4 class="dropdown-header text-white">Upcoming Shapes</h4>
+            </li>
             <li class="shapeQueue">
                 <div class="miniFrameParent1">
                     <div class="miniFrame miniFrame1"></div>
@@ -122,66 +142,70 @@
         </ul>
     </div>
     <div class="controls">
-            <div class="padButton one"></div>
-            <div class="padButton two">
-                <div class="translate backTranslate"></div>
-                <div data-key="38" class="commandButton"></div>    
+        <div class="padButton one"></div>
+        <div class="padButton two">
+            <div class="translate backTranslate"></div>
+            <div data-key="38" class="commandButton"></div>
+        </div>
+        <div class="padButton three"></div>
+        <div class="padButton four">
+            <div class="translate leftTranslate"></div>
+            <div data-key="37" class="commandButton"></div>
+        </div>
+
+        <div class="padButton six">
+            <div class="translate rightTranslate"></div>
+            <div data-key="39" class="commandButton"></div>
+        </div>
+        <div class="padButton seven hidden">
+            <div data-key="49" class="commandButton command7"></div>
+        </div>
+        <div class="rotator hidden rotationArrowCounter">
+        </div>
+        <div class="padButton eight">
+            <div class="translate frontTranslate"></div>
+            <div data-key="40" class="commandButton"></div>
+        </div>
+        <div class="padButton nine hidden">
+            <div data-key="50" class="commandButton command9"></div>
+        </div>
+        <div class="rotator hidden rotationArrowClockwise">
+        </div>
+        <div class="padButton five">
+            <div class="indexCube">
+                <div class="indexFace front"></div>
+                <div class="indexFace back"></div>
+                <div class="indexFace top"></div>
+                <div class="indexFace bottom"></div>
+                <div class="indexFace left"></div>
+                <div class="indexFace right"></div>
             </div>
-            <div class="padButton three"></div>
-            <div class="padButton four">
-                <div class="translate leftTranslate"></div>
-                <div data-key="37" class="commandButton"></div>
-            </div>
-           
-            <div class="padButton six">
-                <div class="translate rightTranslate"></div>
-                <div data-key="39" class="commandButton"></div>
-            </div>
-            <div class="padButton seven hidden">
-                <div data-key="49" class="commandButton command7"></div>
-            </div>
-            <div class="rotator hidden rotationArrowCounter">
-            </div>
-            <div class="padButton eight">
-                <div class="translate frontTranslate"></div>
-                <div data-key="40" class="commandButton"></div>
-            </div>
-            <div class="padButton nine hidden">
-                <div data-key="50" class="commandButton command9"></div>
-            </div>
-            <div class="rotator hidden rotationArrowClockwise">
-            </div>
-            <div class="padButton five">
-                <div class="indexCube">
-                    <div class="indexFace front"></div>
-                    <div class="indexFace back"></div>
-                    <div class="indexFace top"></div>
-                    <div class="indexFace bottom"></div>
-                    <div class="indexFace left"></div>
-                    <div class="indexFace right"></div>
-                </div>
-                <div class="arrow frontArrow"></div>
-                <div class="rotator rotationArrowdown hidden"></div>
-                <div class="arrow backArrow"></div>
-                <div class="rotator rotationArrowup hidden"></div>
-                <div class="arrow leftArrow"></div>
-                <div class="rotator rotationArrowleft hidden"></div>
-                <div class="arrow rightArrow"></div>
-                <div class="rotator rotationArrowright hidden"></div>
-            </div>
-            <div class="padButton ten"></div>
+            <div class="arrow frontArrow"></div>
+            <div class="rotator rotationArrowdown hidden"></div>
+            <div class="arrow backArrow"></div>
+            <div class="rotator rotationArrowup hidden"></div>
+            <div class="arrow leftArrow"></div>
+            <div class="rotator rotationArrowleft hidden"></div>
+            <div class="arrow rightArrow"></div>
+            <div class="rotator rotationArrowright hidden"></div>
+        </div>
+        <div class="padButton ten"></div>
     </div>
     <div class="position-fixed top-0 end-0 me-5 toast text-center">
-            <div class="toast-header text-white bg-success">SCORE</div>
-            <div class="toast-body text-success">0</div>
+        <div class="toast-header text-white bg-success">SCORE</div>
+        <div class="toast-body text-success">0</div>
     </div>
-
-    <script src="https://cdn.tlm.cloud/anime/3.2.0/anime.min.js" integrity="sha384-JmTzX6unfJDiDQMoiypqCUI502SrA0RB+F//kF3GrhGq5FRh2rTca4us326Qg7Dl" crossorigin="anonymous"></script>
-    <script src="https://cdn.tlm.cloud/jquery/3.3.1/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+        integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"
+        integrity="sha512-LfB+BcvR3zBt7ebVskhSWiSbEUiG3p5EcCprkieldsKhBeR6wpnLi0VpWC2GNgVGWP2n/skO8Bx2oKNjUhXCkw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="../js/BlockClass.js"></script>
     <script src="../js/ShapeClass.js"></script>
     <script src="../js/FrameClass.js"></script>
     <script src="../js/Controls.js"></script>
     <script src="../js/playGame.js"></script>
 </body>
+
 </html>
